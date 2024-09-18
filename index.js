@@ -5,7 +5,7 @@ const port = process.env.PORT || 3000;
 const app = express();
 
 // CORS for other API routes (optional)
-const cors = require('cors');
+import cors from 'cors'
 app.use(cors({
    origin: "https://video-chat-frontend-dhaval.vercel.app",
    methods: ["GET", "POST"],
