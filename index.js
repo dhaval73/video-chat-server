@@ -3,13 +3,25 @@ import { createServer } from "http";
 import { Server } from "socket.io";
 const port = process.env.PORT || 3000;
 const app = express();
+
+// CORS for other API routes (optional)
+const cors = require('cors');
+app.use(cors({
+   origin: "https://video-chat-frontend-dhaval.vercel.app",
+   methods: ["GET", "POST"],
+   credentials: true
+}));
+
+// Create HTTP server
 const httpServer = createServer(app);
+
+// Socket.IO with CORS setup
 const io = new Server(httpServer, {
    cors: {
-      origin: "https://video-chat-frontend-dhaval.vercel.app/",
+      origin: "https://video-chat-frontend-dhaval.vercel.app", // No trailing slash
       methods: ["GET", "POST"],
       credentials: true
-   },
+   }
 });
 
 const users = new Map();
