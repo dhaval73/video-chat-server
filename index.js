@@ -8,6 +8,7 @@ const io = new Server(httpServer, {
    cors: {
       origin: "https://video-chat-frontend-dhaval.vercel.app/",
       methods: ["GET", "POST"],
+      credentials: true
    },
 });
 
