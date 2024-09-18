@@ -22,7 +22,7 @@ const io = new Server(httpServer, {
       methods: ["GET", "POST"],
       credentials: true
    },
-   transports: ['websocket', 'polling'] // Explicitly allow both transports
+   transports: ['websocket'] // Explicitly allow both transports
 });
 
 
