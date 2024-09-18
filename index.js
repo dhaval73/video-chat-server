@@ -1,7 +1,7 @@
 import express from "express";
 import { createServer } from "http";
 import { Server } from "socket.io";
-
+const port = process.env.PORT || 3000;
 const app = express();
 const httpServer = createServer(app);
 const io = new Server(httpServer, {
@@ -63,6 +63,6 @@ app.get("/", (req, res) => {
    res.send("Hello World!");
 });
 
-httpServer.listen(3000, () => {
+httpServer.listen(port, () => {
    console.log("Server is running on port 3000");
 });
