@@ -18,11 +18,13 @@ const httpServer = createServer(app);
 // Socket.IO with CORS setup
 const io = new Server(httpServer, {
    cors: {
-      origin: "https://video-chat-frontend-dhaval.vercel.app", // No trailing slash
+      origin: "https://video-chat-frontend-dhaval.vercel.app",
       methods: ["GET", "POST"],
       credentials: true
-   }
+   },
+   transports: ['websocket', 'polling'] // Explicitly allow both transports
 });
+
 
 const users = new Map();
 
