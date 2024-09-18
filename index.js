@@ -6,7 +6,7 @@ const app = express();
 const httpServer = createServer(app);
 const io = new Server(httpServer, {
    cors: {
-      origin: "*",
+      origin: "https://video-chat-frontend-dhaval.vercel.app/",
       methods: ["GET", "POST"],
    },
 });
